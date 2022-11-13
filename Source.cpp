@@ -5,27 +5,43 @@
 using namespace std;
 
 int main() {
-	int n;
+	int values[10] = { 0 };
+	Input(values);
 
-	cin >> n;
+	IncertionSort(values);
 
-	cout << fibFormula(n) << endl;
-
-	cout << fibRecur(n) << endl;
-	
-
+	Print(values);
 
 }
 
-int fibRecur(int n) {
-	if (n == 0)
-		return 0;
-	else if (n == 1)
-		return 1;
-	else
-		return fibRecur(n - 1) + fibRecur(n - 2);
+void Input(int  values[10])
+{
+	for (char i = 0; i < 10; i++)
+	{
+		cin >> values[i];
+	}
 }
 
-int fibFormula(int n) {
-	return round((pow((1 + sqrt(5)) / 2, n) - pow((1 - sqrt(5)) / 2, n)) / sqrt(5));
+void Print(int  values[10])
+{
+	for (char i = 0; i < 10; i++)
+	{
+		cout << values[i] << ' ';
+	}
+}
+
+void IncertionSort(int  values[10])
+{
+	for (char i = 1; i < 10; i++)
+	{
+		if (values[i] < values[i - 1]) {
+			char j = i;
+			while (values[j] < values[j - 1] && j != 0) {
+				int buff = values[j];
+				values[j] = values[j - 1];
+				values[j - 1] = buff;
+				j--;
+			}
+		}
+	}
 }

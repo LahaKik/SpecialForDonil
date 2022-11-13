@@ -1,6 +1,7 @@
 #pragma once
-#include<math.h>
 
-int fibRecur(int n);
+void IncertionSort(int  values[10]);
 
-int fibFormula(int n);
+void Print(int  values[10]);
+
+void Input(int  values[10]);
