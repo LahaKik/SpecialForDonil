@@ -1,7 +1,6 @@
 #pragma once
+#include<math.h>
 
-void BubbleSort(int  values[10]);
+int fibRecur(int n);
 
-void Print(int  values[10]);
-
-void Input(int  values[10]);
+int fibFormula(int n);
